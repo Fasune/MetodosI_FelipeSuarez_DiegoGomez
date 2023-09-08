@@ -1,0 +1,4 @@
+touch materiales.txt
+awk -F "," 'NR>1 {print $3}' indices_refraccion.csv >materiales.txt
+awk -F ',' 'NR>1 { system("mkdir -p \"" $1 "\" && cd \"" $1 "\" && wget -O \"" $3 "\" \"" $4 "\"") }' indices_refraccion.csv
+
